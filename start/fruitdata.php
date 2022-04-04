@@ -15,7 +15,8 @@
     <title>Document</title>
 </head>
 <body>
-    <?php print "가격이 " . $low . "원 이하인 과일의 목록입니다."; ?>
+    <?php print "<div>가격이 " . $low . "원 이하인 과일의 목록입니다.</div>"; ?>
+    
     <table border="1">
         <tr>
             <th>이름</th>
@@ -24,7 +25,7 @@
     <?php 
         foreach($fruit as $name => $price)
         {
-            if($price < $low)
+            if($price <= $low)
             {
                 print "<tr><td>" . $name . "</td><td>" . $price . "</td></tr>";
             }
