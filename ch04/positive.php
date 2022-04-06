@@ -1,5 +1,5 @@
 <?php
-    $result = 1;
+    $result = -1;
     if($result > 0)
     {
         //TODO : $result 값을 반(1/2)으로 만드세요.

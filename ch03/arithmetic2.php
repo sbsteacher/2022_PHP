@@ -11,7 +11,7 @@
    print " !@@@ -------------<br>";
 
    $n2 = 10;
-   $sum = 10 + (++$n2); 
+   $sum = 10 + ($n2++); 
    print "$sum <br>";
    print "$n2 <br>";
 
@@ -30,7 +30,7 @@
 
    print " !!!! -------------<br>";
 
-   $oprd1 = 10;
+   $oprd1 = '10';
    $oprd2 = 10;
 
    $result = $oprd1 == $oprd2;

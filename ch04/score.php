@@ -1,5 +1,5 @@
 <?php
-    $score = 100;
+    $score = 90;
    
     switch($score) 
     {

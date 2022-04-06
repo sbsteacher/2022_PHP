@@ -3,7 +3,9 @@
     //      A       B      C    
     for ($i = 0; $i < 10; $i++) 
     {
-        print "$i <br>"; //내용
+        print "$i";
+        print "$i";
+        print "<br>";
     }
     print "끝@!!";
     // A: 초기화 공간
