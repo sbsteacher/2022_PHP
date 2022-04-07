@@ -35,8 +35,8 @@
                 $sign = "D";
                 break;
         }
-        $val_2 = $score % 10;
-        if($score > 60)
+        $val_2 = $score % 10; // 1의 자리
+        if($score >= 60)
         {
             if($score === 100 || $val_2 >= 7)
             {
