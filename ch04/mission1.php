@@ -19,7 +19,7 @@
     {
         $sign = "F";
         $symbol = "";
-        $val_1 = intval($score / 10);    
+        $val_1 = floor($score / 10);    
         switch($val_1) 
         {
             case 10: case 9:

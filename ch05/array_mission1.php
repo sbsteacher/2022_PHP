@@ -4,24 +4,8 @@
         평균: 75
     */
 
-    $score_arr = array(100, 90, 33, 87, 65);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
+    $score_arr = array(100, 90, 33, 87, 65, 99, 100);
+   
     $sum = 0;
     $len = count($score_arr);
     for($i=0; $i<$len; $i++) 
@@ -32,5 +16,8 @@
 
     print "합계: $sum <br>";
     print "평균: $avg <br>";
+
+
+  
     
 ?>

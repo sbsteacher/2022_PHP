@@ -15,9 +15,9 @@
     */
     $star = rand(3, 10);
     print "star : $star <br>";
-    for($i=0; $i<$star; $i++)
+    for($i=1; $i<=$star; $i++)
     {
-        for($z=0; $z<=$i; $z++)
+        for($z=1; $z<=$i; $z++)
         {
             print "*";
         }

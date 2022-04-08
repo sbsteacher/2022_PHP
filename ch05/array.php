@@ -15,6 +15,7 @@
     print $week[9] . "<br>";
     print $week[11] . "<br>";
     print "test <br>";
+    print "count(week) : " . count($week) . "<br>";
 
     $test = array("A", "B");    
     print count($test) . "<br>";
