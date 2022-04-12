@@ -11,7 +11,7 @@
 
     minus(35, 12);
     minus(10, 2);
-
+    
     print "r : " . $r . "<br>";
 
     function sum($n1, $n2)
@@ -22,6 +22,7 @@
     function minus($n1, $n2)
     {
         print "minus : " . ($n1 - $n2) . "<br>";
+        return;
     }
     
 
