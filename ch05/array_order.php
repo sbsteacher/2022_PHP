@@ -14,13 +14,18 @@
     print_r($copy_arr_1);
     print "<br>";
 
-    rsort($copy_arr_1);
-
     print "origin : ";
     print_r($arr_age);
     print "<br>";
+
+    rsort($copy_arr_1);
     print "copy : ";
     print_r($copy_arr_1);
+    print "<br>";
+    
+    print "origin : ";
+    print_r($arr_age);
+    print "<br>";
     print "<br>---------------<br>";
 
     //키 정렬

@@ -5,7 +5,7 @@
 
     $name = "HongGilDong";
     if(isset($name)) {
-        print "name is great!!";
+        print "name is great!! <br>";
         print isset($name);
     }
     print $name . "<br>";
