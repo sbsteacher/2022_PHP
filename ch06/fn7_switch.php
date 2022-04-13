@@ -7,27 +7,31 @@
 
     function get_season($mon)
     {
+        $result = "";
         switch($mon)
         {
             case 1: 
             case 2: 
             case 12:
-                return "겨울";
+                $result = "겨울";
+                break;
             case 3:
             case 4:
             case 5:
-                return "봄";
+                $result = "봄";
+                break;
             case 6:
             case 7:
             case 8: 
-                return "여름";
+                $result = "여름";
+                break;
             case 9:
             case 10:
             case 11:
-                return "가을";
-            default:
-                return ""; 
+                $result = "가을";
+                break;
         }
+        return $result;
     }
     //3~5 : 봄
     //6~8 : 여름

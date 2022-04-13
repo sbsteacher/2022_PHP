@@ -11,7 +11,7 @@
         if($mon < 3 || $mon === 12)    { return "겨울"; } 
         if($mon < 6)                   { return "봄"; } 
         if($mon < 9)                   { return "여름"; } 
-        else                           { return "가을"; }
+        return "가을";
     }
     //3~5 : 봄
     //6~8 : 여름
