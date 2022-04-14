@@ -19,5 +19,5 @@
     $result = mysqli_query($conn, $sql);
     mysqli_close($conn); //연결 닫는거 !!!
     print "result : $result <br>";
-    header("Location: list.php");
+   // header("Location: list.php");
 ?>
