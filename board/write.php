@@ -8,7 +8,8 @@
 </head>
 <body>
     <h1>글쓰기</h1>
-    <form action="/2022_PHP/board/write_proc.php" method="post">
+    <a href="list.php"><button>리스트</button></a>
+    <form action="write_proc.php" method="post">
         <div><input type="text" name="title" placeholder="제목"></div>
         <div><textarea name="ctnt" placeholder="내용"></textarea></div>
         <div>

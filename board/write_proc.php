@@ -1,12 +1,12 @@
 <?php
-    include "db.php";
+    include_once "db.php";
 
     $title = $_POST["title"];
     $ctnt = $_POST["ctnt"];
 
     print "title : $title <br>";
     print "ctnt : $ctnt <br>";
-
+    
     $conn = get_conn();
     $sql = 
     " 
@@ -15,6 +15,9 @@
         VALUES
         ('${title}', '${ctnt}')
     ";
-    mysqli_query($conn, $sql);
+   
+    $result = mysqli_query($conn, $sql);
     mysqli_close($conn); //연결 닫는거 !!!
+    print "result : $result <br>";
+    header("Location: list.php");
 ?>
