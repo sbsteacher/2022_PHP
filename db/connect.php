@@ -18,7 +18,7 @@
     $conn = mysqli_connect(URL, USERNAME, PASSWORD, DB_NAME);
 
     $sql = "INSERT INTO t_board(title, ctnt) 
-    VALUES('test', 'content')";
+    VALUES('test', 'content');";
     mysqli_query($conn, $sql);
 
     mysqli_close($conn);
