@@ -1,5 +1,6 @@
 <?php
     include_once "db.php";
+
     $conn = get_conn();
     $sql = "SELECT i_board, title, create_at FROM t_board ORDER BY i_board DESC";
     $result = mysqli_query($conn, $sql);
