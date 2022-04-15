@@ -1,6 +1,5 @@
 <?php
     include_once 'db.php';
-    include_once 'db.php';
 
     $i_board = $_GET['i_board'];
     $sql = "SELECT * FROM t_board WHERE i_board = $i_board";
@@ -27,6 +26,7 @@
 <body>
     <a href="list.php"><button>리스트</button></a>
     <a href="del_proc.php?i_board=<?=$i_board?>"><button>삭제</button></a>
+    <a href="mod.php?i_board=<?=$i_board?>"><button>수정</button></a>
     <div>제목 : <?= $title ?></div>
     <div>작성일시 : <?= $create_at ?></div>
     <div>내용 : <?= $ctnt ?></div>
