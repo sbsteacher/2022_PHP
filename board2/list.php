@@ -1,10 +1,6 @@
 <?php
     include_once "db.php";
-
-    $conn = get_conn();
-    $sql = "SELECT i_board, title, create_at FROM t_board ORDER BY i_board DESC";
-    $result = mysqli_query($conn, $sql);
-    mysqli_close($conn);
+    $data = sel_board_list();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,8 +20,7 @@
             <th>작성일시</th>
         </tr>
         <?php 
-            foreach($result as $row)
-            //while($row = mysqli_fetch_assoc($result))
+            foreach($data as $row)
             {
                 $i_board = $row['i_board'];
                 $title = $row['title'];
