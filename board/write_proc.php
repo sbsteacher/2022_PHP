@@ -13,7 +13,7 @@
         INSERT INTO t_board 
         (title, ctnt)
         VALUES
-        ('${title}', '${ctnt}')
+        ('{$title}', '{$ctnt}')
     ";
    
     $result = mysqli_query($conn, $sql);

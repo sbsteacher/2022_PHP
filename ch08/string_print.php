@@ -22,7 +22,7 @@
     print "HOST : " . $str2["host"] . "<br>";
     //var_dump($str2);
 
-    //error_log("test", 3, "C:\Apache24\htdocs\ch08\err.log")
+    error_log("test", 3, "./err.log");
 
     parse_str($str2["query"], $output);
     print "이름 : ";

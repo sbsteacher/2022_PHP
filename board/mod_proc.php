@@ -17,5 +17,5 @@
     $result = mysqli_query($conn, $sql);
     mysqli_close($conn);
 
-    header("Location: detail.php?i_board=${i_board}");
+    header("Location: detail.php?i_board=$i_board");
 ?>
