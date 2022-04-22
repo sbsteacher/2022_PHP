@@ -1,7 +1,7 @@
 CREATE TABLE t_user(
 	i_user INT unsigned AUTO_INCREMENT PRIMARY KEY,
 	uid VARCHAR(20) UNIQUE NOT NULL,  
-	upw CHAR(30) NOT NULL, 
+	upw VARCHAR(30) NOT NULL, 
 	nm VARCHAR(5) NOT NULL,
 	gender INT unsigned not null CHECK(gender IN (0, 1)),
 	created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
