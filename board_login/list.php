@@ -18,20 +18,20 @@
 <body>
     <div id="container">
         <header>
-        <?=isset($_SESSION["login_user"]) ? $nm . "님 환영합니다" : "" ?>
+            <?=isset($_SESSION["login_user"]) ? "<div>". $nm . "님 환영합니다.</div>" : "" ?>
+            <div>
+                <a href="list.php">리스트</a>
+                <a href="write.php">글쓰기</a>
+                <?=
+                    isset($_SESSION["login_user"]) 
+                    ? "<a href='logout.php'>로그아웃</a>" 
+                    : "<a href='login.php'>로그인</a>" 
+                ?>
+            </div>
         </header>
-        <main></main>
+        <main>
+            <h1>리스트</h1>
+        </main>
     </div>
-    <?php if(isset($_SESSION["login_user"])) { ?>
-        <div><?=$nm?>님 환영합니다.</div>
-    <?php } ?>
-    <?php 
-        if(isset($_SESSION["login_user"])) {
-            print "<div>" . $nm . "님 환영합니다.</div>";
-        }
-    ?>
-    <?=isset($_SESSION["login_user"]) ? $nm . "님 환영합니다" : "" ?>
-    <h1>리스트</h1>
-    
 </body>
 </html>
