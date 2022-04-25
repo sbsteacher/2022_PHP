@@ -24,4 +24,12 @@
     //비밀번호가 맞으면 "list.php로 주소 이동"
     //비밀번호가 다르면 "login.php로 주소 이동"
 
+    if($upw === $result["upw"]) { //로그인 성공!!
+        session_start();
+        $_SESSION["login_user"] = $result;
+        header("Location: list.php");
+    } else {
+        header("Location: login.php");
+    }
+
  
