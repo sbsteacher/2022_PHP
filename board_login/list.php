@@ -1,6 +1,6 @@
 <?php   
     include_once "db/db_board.php";
-    
+
     session_start();
     $nm = "";
     if(isset($_SESSION["login_user"])) {
@@ -43,11 +43,11 @@
                         <th>등록일시</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody>                    
                     <?php foreach($list as $item) { ?>
                         <tr>
                             <td><?=$item["i_board"]?></td>
-                            <td><?=$item["title"]?></td>
+                            <td><a href="detail.php?i_board=<?=$item["i_board"]?>"><?=$item["title"]?></a></td>
                             <td><?=$item["nm"]?></td>
                             <td><?=$item["created_at"]?></td>
                         </tr>
