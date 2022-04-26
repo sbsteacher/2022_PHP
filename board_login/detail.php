@@ -1,9 +1,12 @@
 <?php
-    include_once "db/db_board.php";    
+    include_once "db/db_board.php";
+    session_start();
+    if(isset($_SESSION["login_user"])) {
+        $login_user = $_SESSION["login_user"];
+    }
     $param = [
         "i_board" => $_GET["i_board"]
     ];
-
     $item = sel_board($param);
 ?>
 <!DOCTYPE html>
@@ -16,10 +19,16 @@
 </head>
 <body>
     <div><a href="list.php">리스트</a></div>
-    <div></div>
+    <?php if(isset($_SESSION["login_user"]) && $login_user["i_user"] === $item["i_user"]) { ?>
+        <div>
+            <a href="mod.php"><button>수정</button></a>
+            <a href="del.php"><button>삭제</button></a>
+        </div>
+    <?php } ?>
     <div>제목 : <?=$item["title"]?></div>
     <div>글쓴이 : <?=$item["nm"]?></div>
     <div>등록일시 : <?=$item["created_at"]?></div>
     <div> <?=$item["ctnt"]?> </div>
 </body>
 </html>
+
