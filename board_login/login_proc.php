@@ -9,7 +9,7 @@
     echo "upw : ", $upw, "<br>";
 
     $param = [
-        "uid" => $uid
+        "uid" => $uid,        
     ];
 
     $result = sel_user($param);
