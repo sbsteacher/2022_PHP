@@ -1,10 +1,13 @@
 <?php   
+    include_once "db/db_board.php";
+    
     session_start();
     $nm = "";
     if(isset($_SESSION["login_user"])) {
         $login_user = $_SESSION["login_user"];
         $nm = $login_user["nm"];
     }
+    $list = sel_board_list();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,6 +34,26 @@
         </header>
         <main>
             <h1>리스트</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>글번호</th>
+                        <th>제목</th>
+                        <th>글쓴이</th>
+                        <th>등록일시</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach($list as $item) { ?>
+                        <tr>
+                            <td><?=$item["i_board"]?></td>
+                            <td><?=$item["title"]?></td>
+                            <td><?=$item["nm"]?></td>
+                            <td><?=$item["created_at"]?></td>
+                        </tr>
+                    <?php } ?>
+                </tbody>
+            </table>
         </main>
     </div>
 </body>
