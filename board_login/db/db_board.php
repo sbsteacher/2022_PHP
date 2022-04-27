@@ -32,9 +32,9 @@
         return $result;
     }
 
-    function sel_board($param) {
+    function sel_board(&$param) {
         $i_board = $param["i_board"];
-        $sql = "SELECT A.i_board, A.title, A.ctnt, A.created_at
+        $sql = "SELECT A.title, A.ctnt, A.created_at
                      , B.i_user, B.nm
                   FROM t_board A
                  INNER JOIN t_user B
@@ -44,4 +44,17 @@
         $result = mysqli_query($conn, $sql);
         mysqli_close($conn);        
         return mysqli_fetch_assoc($result);
+    }
+
+    function del_board(&$param) {
+        $i_board = $param["i_board"];
+        $i_user = $param["i_user"];
+
+        $sql = "DELETE FROM t_board 
+                 WHERE i_board = $i_board 
+                   AND i_user = $i_user";
+        $conn = get_conn();
+        $result = mysqli_query($conn, $sql);
+        mysqli_close($conn);
+        return $result;
     }
