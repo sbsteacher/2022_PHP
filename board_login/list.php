@@ -3,11 +3,24 @@
 
     session_start();
     $nm = "";
+    $page = $_GET["page"];
+    if(!$page) { 
+        $page = 1; 
+    } else {
+        $page = intval($page);
+    }
+    print "page : " . $page;
     if(isset($_SESSION["login_user"])) {
         $login_user = $_SESSION["login_user"];
         $nm = $login_user["nm"];
     }
-    $list = sel_board_list();
+    $row_count = 20;
+    $param = [
+        "row_count" => $row_count,
+        "start_idx" => ($page - 1) * $row_count
+    ];
+    $paging_count = sel_paging_count($param);
+    $list = sel_board_list($param);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -54,6 +67,11 @@
                     <?php } ?>
                 </tbody>
             </table>
+            <div>
+            <?php for($i=1; $i<=$paging_count; $i++) { ?>
+                <span><a href="list.php?page=<?=$i?>"><?=$i?></a></span>                    
+            <?php } ?>
+            </div>
         </main>
     </div>
 </body>
