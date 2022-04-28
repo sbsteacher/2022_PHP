@@ -9,6 +9,8 @@
         "i_board" => $i_board
     ];
     $item = sel_board($param);
+    $next_board = sel_next_board($param);
+    $prev_board = sel_prev_board($param);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,6 +22,15 @@
 </head>
 <body>
     <div><a href="list.php">리스트</a></div>
+    <div>
+        <?php if($prev_board !== 0) { ?>
+            <a href="detail.php?i_board=<?=$prev_board?>"><button>이전글</button></a>
+        <?php } ?>
+
+        <?php if($next_board !== 0) { ?>
+            <a href="detail.php?i_board=<?=$next_board?>"><button>다음글</button></a>
+        <?php } ?>
+    </div>
     <?php if(isset($_SESSION["login_user"]) && $login_user["i_user"] === $item["i_user"]) { ?>
         <div>
             <a href="mod.php?i_board=<?=$i_board?>"><button>수정</button></a>

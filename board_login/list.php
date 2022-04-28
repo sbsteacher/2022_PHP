@@ -3,13 +3,11 @@
 
     session_start();
     $nm = "";
-    $page = $_GET["page"];
-    if(!$page) { 
-        $page = 1; 
-    } else {
-        $page = intval($page);
-    }
-    print "page : " . $page;
+
+    $page = 1;
+    if(isset($_GET["page"])) {       
+        $page = intval($_GET["page"]);
+    }     
     if(isset($_SESSION["login_user"])) {
         $login_user = $_SESSION["login_user"];
         $nm = $login_user["nm"];
