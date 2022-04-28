@@ -67,7 +67,9 @@
             </table>
             <div>
             <?php for($i=1; $i<=$paging_count; $i++) { ?>
-                <span><a href="list.php?page=<?=$i?>"><?=$i?></a></span>                    
+                <span class="<?=$i===$page ? "pageSelected" : ""?>">
+                    <a href="list.php?page=<?=$i?>"><?=$i?></a>
+                </span>
             <?php } ?>
             </div>
         </main>
