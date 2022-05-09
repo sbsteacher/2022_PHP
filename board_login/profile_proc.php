@@ -53,6 +53,8 @@
         ];
 
         $result = upd_profile_img($param);
+        $login_user["profile_img"] = $target_filenm;
+        $_SESSION["login_user"] = $login_user;
         Header("Location: profile.php");
     } else { //업로드 실패!
         echo "업로드 실패";
