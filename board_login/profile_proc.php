@@ -1,5 +1,7 @@
 <?php
+    include_once "db/db_user.php";
     session_start();
+    
     define("PROFILE_PATH", "img/profile/");
     
     $login_user = $_SESSION["login_user"];
@@ -23,7 +25,7 @@
         ); 
     }
     $img_name = $_FILES["img"]["name"];
-    $last_index = strrpos($img_name, ".");
+    $last_index = mb_strrpos($img_name, ".");
     $ext = mb_substr($img_name, $last_index);
 
     $target_filenm = gen_uuid_v4() . $ext;
@@ -35,6 +37,15 @@
     $tmp_img = $_FILES['img']['tmp_name'];
     $imageUpload = move_uploaded_file($tmp_img, $target_full_path . "/" .$target_filenm);
     if($imageUpload) { //업로드 성공!
+        //TODO : 이전에 등록된 프사가 있으면 삭제!
+
+        //DB에 저장!
+        $param = [
+            "profile_img" => $target_filenm,
+            "i_user" => $login_user["i_user"]
+        ];
+
+        $result = upd_profile_img($param);
         Header("Location: profile.php");
     } else { //업로드 실패!
         echo "업로드 실패";
