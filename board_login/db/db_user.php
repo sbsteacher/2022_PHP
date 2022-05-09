@@ -22,7 +22,7 @@
  function sel_user(&$param) {
     $uid = $param["uid"];
     $sql = 
-    "   SELECT i_user, uid, upw, nm, gender
+    "   SELECT i_user, uid, upw, nm, gender, profile_img
         FROM t_user
         WHERE uid = '$uid'
     ";
@@ -44,4 +44,3 @@
  }
 
 
- 
