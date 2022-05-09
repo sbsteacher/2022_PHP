@@ -9,7 +9,7 @@
 <body>
     <form action="upload_proc.php" method="POST" enctype="multipart/form-data">
         <div><label>이미지 <input type="file" name="img" accept="image/*"></label></div>
-        <div><input type="submit" value="업로드">
+        <div><input type="submit" value="업로드"></div>
     </form>
 </body>
 </html>

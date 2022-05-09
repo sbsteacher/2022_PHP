@@ -17,7 +17,7 @@ $fileExt = $fileTypeExt[1]; //jpg, png 등
 // 확장자 검사
 $extStatus = false;
 
-switch($fileExt){
+switch($fileExt) {
 	case 'jpeg':
 	case 'jpg':
 	case 'gif':
@@ -36,7 +36,7 @@ switch($fileExt){
 if($fileType == 'image'){
 	// 허용할 확장자를 jpg, bmp, gif, png로 정함, 그 외에는 업로드 불가
 	if($extStatus){
-        $res_path = "../img";
+        $res_path = "../img/ddd";
         if(!is_dir($res_path)) {
             mkdir($res_path, 0777, true);
         }
@@ -48,19 +48,17 @@ if($fileType == 'image'){
 		// 업로드 성공 여부 확인
 		if($imageUpload == true){
 			echo "파일이 정상적으로 업로드 되었습니다. <br>";
-			echo "<img src='{$resFile}' width='100' />";
+			echo "<img src='{$resFile}' width='100'>";
 		}else{
 			echo "파일 업로드에 실패하였습니다.";
 		}
 	}	// end if - extStatus
 		// 확장자가 jpg, bmp, gif, png가 아닌 경우 else문 실행
 	else {
-		echo "파일 확장자는 jpg, bmp, gif, png 이어야 합니다.";
-		exit;
+		echo "파일 확장자는 jpg, bmp, gif, png 이어야 합니다.";		
 	}	
 }	// end if - filetype
 	// 파일 타입이 image가 아닌 경우 
 else {
 	echo "이미지 파일이 아닙니다.";
-	exit;
 }
