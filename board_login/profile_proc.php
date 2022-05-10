@@ -4,7 +4,7 @@
     
     define("PROFILE_PATH", "img/profile/");
     
-    $login_user = $_SESSION["login_user"];
+    $login_user = &$_SESSION["login_user"];
 
     var_dump($_FILES);
     if($_FILES["img"]["name"] === "") {
@@ -53,8 +53,7 @@
         ];
 
         $result = upd_profile_img($param);
-        $login_user["profile_img"] = $target_filenm;
-        $_SESSION["login_user"] = $login_user;
+        $login_user["profile_img"] = $target_filenm;     
         Header("Location: profile.php");
     } else { //업로드 실패!
         echo "업로드 실패";
