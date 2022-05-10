@@ -66,10 +66,18 @@
                 </thead>
                 <tbody>                    
                     <?php foreach($list as $item) { ?>
+                        <?php                            
+                            $row_profile_img = $item["profile_img"] == null ? "basic.jpg" : $item["i_user"] . "/" . $item["profile_img"]; 
+                        ?>
                         <tr>
                             <td><?=$item["i_board"]?></td>
                             <td><a href="detail.php?i_board=<?=$item["i_board"]?>"><?=$item["title"]?></a></td>
-                            <td><?=$item["nm"]?></td>
+                            <td>
+                                <?=$item["nm"]?>
+                                <div class="circular__img wh40">
+                                    <img src="/board_login/img/profile/<?=$row_profile_img?>">
+                                </div>
+                            </td>
                             <td><?=$item["created_at"]?></td>
                         </tr>
                     <?php } ?>
