@@ -9,7 +9,7 @@
     //값 정렬
     //sort(오름차순), rsort(내림차순)
 
-    $copy_arr_1 = $arr_age;
+    $copy_arr_1 = &$arr_age;
     print "copy : ";
     print_r($copy_arr_1);
     print "<br>";
