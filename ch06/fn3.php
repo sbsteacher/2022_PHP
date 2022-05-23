@@ -9,6 +9,9 @@
         return $result;
     }
 
+    //void: 리턴되는 값이 없는 함수
+    //비void: 
+
     $start_num = 1;
     $end_num = 100;
 

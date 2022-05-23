@@ -13,4 +13,6 @@
         print "숫자 ${num}(는)은 ${result}수입니다.";
         return;
     }
+
+    //비void, void
 ?>

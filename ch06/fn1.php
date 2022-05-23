@@ -27,6 +27,11 @@
     {
         print_result($num1, "%", $num2, ($num1 % $num2));
     }
+
+
+
+
+    
     print_sum($n1, $n2);
     print_minus($n1, $n2);
     print_multi($n1, $n2);
