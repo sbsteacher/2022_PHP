@@ -22,6 +22,11 @@
     function sel_paging_count(&$param) {
         $sql = "SELECT CEIL(COUNT(i_board) / {$param["row_count"]}) as cnt
                 FROM t_board";
+
+        if($param["search_txt"] !== "") {
+            $sql .= " WHERE title LIKE '%{$param["search_txt"]}%'";            
+        }
+
         $conn = get_conn();        
         $result = mysqli_query($conn, $sql);
         mysqli_close($conn); 

@@ -11,14 +11,18 @@
     $page = 1;
     if(isset($_GET["page"])) {
         $page = intval($_GET["page"]);
-    }    
-    print "<div>page : {$page}</div>";
-
+    }
+    $search_txt = "";
+    if(isset($_GET["search_txt"])) {
+        $search_txt = $_GET["search_txt"];
+    }
+    print "search_txt : {$search_txt}";
     $row_count = 10;
 
     $param = [
         "s_idx" => ($page - 1) * $row_count,
-        "row_count" => $row_count
+        "row_count" => $row_count,
+        "search_txt" => $search_txt
     ];
 
     $paging_count = sel_paging_count($param);
@@ -49,6 +53,14 @@
         </header>
         <main>
             <h1>리스트</h1>
+            <div>
+                <form action="list.php" method="get">
+                    <div>
+                        <input type="search" name="search_txt">
+                        <input type="submit" value="검색">
+                    </div>
+                </form>
+            </div>
             <table>
                 <thead>
                     <tr>
@@ -71,7 +83,9 @@
             </table>
             <div>
                 <?php for($i=1; $i<=$paging_count; $i++) { ?>
-                    <span><a href="list.php?page=<?=$i?>"><?=$i?></a></span>   
+                    <span class="<?= $i==$page ? "selected_page" : "" ?>">
+                        <a href="list.php?page=<?=$i?>"><?=$i?></a>
+                    </span>   
                 <?php } ?>
             </div>
         </main>
