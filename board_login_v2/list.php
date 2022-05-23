@@ -62,7 +62,7 @@
                     <?php foreach($list as $item) { ?>
                         <tr>
                             <td><?=$item["i_board"]?></td>
-                            <td><a href="detail.php?i_board=<?=$item["i_board"]?>"><?=$item["title"]?></a></td>
+                            <td><a href="detail.php?i_board=<?=$item["i_board"]?>&page=<?=$page?>"><?=$item["title"]?></a></td>
                             <td><?=$item["nm"]?></td>
                             <td><?=$item["created_at"]?></td>
                         </tr>

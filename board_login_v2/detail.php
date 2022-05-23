@@ -5,6 +5,7 @@
         $login_user = $_SESSION["login_user"];
     }
     $i_board = $_GET["i_board"];
+    $page = $_GET["page"];
     $param = [
         "i_board" => $i_board
     ];
@@ -19,7 +20,7 @@
     <title><?=$item["title"]?></title>
 </head>
 <body>
-    <div><a href="list.php">리스트</a></div>
+    <div><a href="list.php?page=<?=$page?>">리스트</a></div>
     <?php if(isset($_SESSION["login_user"]) && $login_user["i_user"] === $item["i_user"]) { ?>
         <div>
             <a href="mod.php?i_board=<?=$i_board?>"><button>수정</button></a>
