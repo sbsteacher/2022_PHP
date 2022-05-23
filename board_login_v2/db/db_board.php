@@ -39,11 +39,13 @@
                      , B.nm
                   FROM t_board A
                  INNER JOIN t_user B
-                    ON A.i_user = B.i_user
-                 WHERE A.title LIKE '%{$param["search_txt"]}%'
-                 ORDER BY A.i_board DESC 
+                    ON A.i_user = B.i_user";
+        if($param["search_txt"] !== "") {
+            $sql .= " WHERE A.title LIKE '%{$param["search_txt"]}%'";
+        }
+        $sql .= " ORDER BY A.i_board DESC 
                  LIMIT {$param["s_idx"]}, {$param["row_count"]}";
-                         
+
         $conn = get_conn();
         $result = mysqli_query($conn, $sql);
         mysqli_close($conn);

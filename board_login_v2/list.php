@@ -15,8 +15,7 @@
     $search_txt = "";
     if(isset($_GET["search_txt"])) {
         $search_txt = $_GET["search_txt"];
-    }
-    print "search_txt : {$search_txt}";
+    }   
     $row_count = 10;
 
     $param = [
@@ -51,42 +50,46 @@
                 <?php } ?>                
             </div>
         </header>
-        <main>
+        <main class="p_10">
             <h1>리스트</h1>
-            <div>
+            <div class="flex_center">
                 <form action="list.php" method="get">
                     <div>
-                        <input type="search" name="search_txt">
+                        <input type="search" name="search_txt" value="<?=$search_txt?>">
                         <input type="submit" value="검색">
                     </div>
                 </form>
             </div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>글번호</th>
-                        <th>제목</th>
-                        <th>글쓴이</th>
-                        <th>등록일시</th>
-                    </tr>
-                </thead>
-                <tbody>                    
-                    <?php foreach($list as $item) { ?>
+            <div class="flex_center m_t_10">
+                <table>
+                    <thead>
                         <tr>
-                            <td><?=$item["i_board"]?></td>
-                            <td><a href="detail.php?i_board=<?=$item["i_board"]?>&page=<?=$page?>"><?=$item["title"]?></a></td>
-                            <td><?=$item["nm"]?></td>
-                            <td><?=$item["created_at"]?></td>
+                            <th>글번호</th>
+                            <th>제목</th>
+                            <th>글쓴이</th>
+                            <th>등록일시</th>
                         </tr>
-                    <?php } ?>
-                </tbody>
-            </table>
-            <div>
+                    </thead>
+                    <tbody>                    
+                        <?php foreach($list as $item) { ?>
+                            <tr>
+                                <td><?=$item["i_board"]?></td>
+                                <td><a href="detail.php?i_board=<?=$item["i_board"]?>&page=<?=$page?><?= $search_txt !== "" ? "&search_txt=" . $search_txt : "" ?>"><?=str_replace($search_txt, "<mark>{$search_txt}</mark>", $item["title"])?></a></td>
+                                <td><?=$item["nm"]?></td>
+                                <td><?=$item["created_at"]?></td>
+                            </tr>
+                        <?php } ?>
+                    </tbody>
+                </table>
+            </div>
+            <div class="flex_center m_t_10">
+                <span>
                 <?php for($i=1; $i<=$paging_count; $i++) { ?>
                     <span class="<?= $i==$page ? "selected_page" : "" ?>">
-                        <a href="list.php?page=<?=$i?>"><?=$i?></a>
+                        <a href="list.php?page=<?=$i?><?= $search_txt !== "" ? "&search_txt=" . $search_txt : "" ?>"><?=$i?></a>
                     </span>   
                 <?php } ?>
+                </span>
             </div>
         </main>
     </div>
