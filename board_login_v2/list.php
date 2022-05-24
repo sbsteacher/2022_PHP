@@ -16,7 +16,7 @@
     if(isset($_GET["search_txt"])) {
         $search_txt = $_GET["search_txt"];
     }   
-    $row_count = 10;
+    $row_count = 15;
 
     $param = [
         "s_idx" => ($page - 1) * $row_count,
@@ -74,7 +74,7 @@
                         <?php foreach($list as $item) { ?>
                             <tr>
                                 <td><?=$item["i_board"]?></td>
-                                <td><a href="detail.php?i_board=<?=$item["i_board"]?>&page=<?=$page?><?= $search_txt !== "" ? "&search_txt=" . $search_txt : "" ?>"><?=str_replace($search_txt, "<mark>{$search_txt}</mark>", $item["title"])?></a></td>
+                                <td><a href="detail.php?i_board=<?=$item["i_board"]?>&page=<?=$page?><?= $search_txt === "" ? "" : "&search_txt={$search_txt}" ?>"><?=str_replace($search_txt, "<mark>{$search_txt}</mark>", $item["title"])?></a></td>
                                 <td><?=$item["nm"]?></td>
                                 <td><?=$item["created_at"]?></td>
                             </tr>
@@ -86,7 +86,7 @@
                 <span>
                 <?php for($i=1; $i<=$paging_count; $i++) { ?>
                     <span class="<?= $i==$page ? "selected_page" : "" ?>">
-                        <a href="list.php?page=<?=$i?><?= $search_txt !== "" ? "&search_txt=" . $search_txt : "" ?>"><?=$i?></a>
+                        <a href="list.php?page=<?=$i?><?= $search_txt === "" ? "" : "&search_txt={$search_txt}" ?>"><?=$i?></a>
                     </span>   
                 <?php } ?>
                 </span>
