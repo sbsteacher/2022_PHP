@@ -19,32 +19,42 @@
 
     $str1 = "http://www.php.edu/testurl.html?name=kim&age=28";
     $str2 = parse_url($str1);
+    print "SCHEME : " . $str2["scheme"] . "<br>";
     print "HOST : " . $str2["host"] . "<br>";
+    print "PATH : " . $str2["path"] . "<br>";
     //var_dump($str2);
 
     error_log("test", 3, "./err.log");
 
+    print "query : " . $str2["query"] . "<br>";
+
     parse_str($str2["query"], $output);
     print "이름 : ";
     print $output["name"];
+    print "나이 : ";
+    print $output["age"];
     print "<br>";
     $sitename = "php웹이즈프리";
     echo substr($sitename, 0, 6) . "<br>";
-    echo mb_substr($sitename, 0, 1) . "<br>";
-    echo mb_strlen($sitename) . "<br>";
-    printf("나이 %02d, 키 %.2f <br>", 8, 173.1212);
+    echo mb_substr($sitename, 0, 4) . "<br>";
+    echo "strlen : " . strlen($sitename) . "<br>";
+    echo "mb_strlen : " . mb_strlen($sitename) . "<br>";
+    printf("나이 %03d, 키 %.2f, hello: %-10s <br>", 8, 173.1212, "안녕");
 
-    $date = "2017 1 13";
-    sscanf($date, "%d %d %d", $year, $mon, $day);
+    $date = "2017_1_13/10";
+    sscanf($date, "%d_%d_%d/%d", $year, $mon, $day, $sec);
     print $year . "<br>";
     print $mon . "<br>";
     print $day . "<br>";
+    print $sec . "<br>";
 
     $str4 = "나이는 12살입니다.";
-    sscanf($str4, "%s %d %s", $strAge, $decAge, $strAge2);
-    print $strAge . "<br>";
+    $str5 = "나이는 121212.12살입니다.";
+    sscanf($str5, "%s %d", $sss, $decAge);
+    
+    print $sss . "<br>";
     print $decAge . "<br>";
-    print $strAge2 . "<br>";
+    
 ?>    
 </body>
 </html>

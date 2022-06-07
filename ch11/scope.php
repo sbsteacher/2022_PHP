@@ -4,7 +4,7 @@
         global $n;
         $n = "A";
         $m = "A";
-        print "$n, $m<br>";
+        print "2: $n, $m<br>";
     }
 
     $n = "M";

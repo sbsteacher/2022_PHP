@@ -5,7 +5,7 @@
         print $i++ . "<br>";
     }
 
-    $z = 1;
+    $z = 100;
     function inc2()
     {
         global $z;
@@ -13,8 +13,12 @@
         $z += 1;
     }
 
+    inc2();
+    print $z . "<br>";
+    /*
     for($i=0; $i<10; $i++)
     {
         inc();
     }
+    */
 ?>

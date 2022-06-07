@@ -18,13 +18,14 @@
     define("USERNAME", "root");
     define("PASSWORD", "506greendg@");
     define("DB_NAME", "board1");
-    /*
+    
     $conn = mysqli_connect(URL, USERNAME, PASSWORD, DB_NAME);
 
     $sql = "INSERT INTO t_board(title, ctnt) 
-    VALUES('test', 'content');";
-    mysqli_query($conn, $sql);
+    VALUES('반가워요2', '나이스밋츄2');";
+    $result = mysqli_query($conn, $sql);
+    print "result : $result";
 
     mysqli_close($conn);
-    */
+    
 ?>

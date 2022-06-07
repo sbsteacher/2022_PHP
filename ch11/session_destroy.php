@@ -1,7 +1,13 @@
 <?php  
     session_start();  
-    session_destroy();
-    echo $_SESSION['var1'], "<br>";
-    echo $_SESSION['var2'], "<br>"; 
+    session_unset();
+    //session_destroy();
+    if(isset($_SESSION['var1'])) {
+        echo $_SESSION['var1'], "<br>";
+    }
+
+   
+    
+    
 ?>
 <a href="confirm.php">확인</a>
