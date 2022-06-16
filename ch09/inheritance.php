@@ -30,9 +30,19 @@
             print "Student에 있는 print People<br>";
         }
     }
+    $people = new People();
     
     $stu1 = new Student("홍길동", 21, 1010);
+    /*
     $stu1->printPeople();
     print("-------------<br>");
     $stu1->printStudent();
+    */
 
+    callPrintPeople($people);
+
+
+
+    function callPrintPeople($obj) {
+        $obj->printPeople();
+    }

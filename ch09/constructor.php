@@ -3,8 +3,8 @@
         private $name;
         private $color;
         private $price;
-
-        function __construct($name, $price, $color) {
+        
+        function __construct($name=null, $price=null, $color=null) {
             $this->name = $name;
             $this->color = $color;
             $this->price = $price;
@@ -17,8 +17,8 @@
         }
     }
 
-    $apple = new Fruit("Apple", 1000, "red");
-    $banana = new Fruit("Banana", 500, "yellow");
+    $apple = new Fruit(null, null, "Red");
+    $banana = new Fruit(null, 500);
 
     $apple->print_fruit();
     $banana->print_fruit();

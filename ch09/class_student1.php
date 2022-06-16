@@ -4,20 +4,17 @@
     // 접근지시어
     // 접근제어자
     // java: private default protected public
-    class Student {
-        public $cnt = 3;
+    class Student {        
         public $studentId;
         public $studentName;
 
-        public function printStudent($id, $name) {
+        function __construct() {
+            print "construct!!! <br>";
+        }
+
+        function printStudent($id, $name) {
             print "ID : {$id}<br>";
             print "Name : {$name}<br>";
-
-            if($this->cnt == 0) {
-                return;
-            }
-            $this->cnt--;
-            $this->printStudent("111", "222");
         }
     }
 

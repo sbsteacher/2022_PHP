@@ -3,18 +3,16 @@
         private $studentId;
         private $studentName;
 
-        function __construct() {}
-
-        public function printStudent() {
+        function printStudent() {
             print "ID : {$this->studentId}<br>";
             print "Name : {$this->studentName}<br>";
         }
 
-        public function getStudentId() {
+        function getStudentId() {
             return $this->studentId;
         }
 
-        public function setStudentId($studentId) {
+        function setStudentId($studentId) {
             $this->studentId = $studentId;
             return $this;
         }

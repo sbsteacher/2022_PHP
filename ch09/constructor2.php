@@ -21,18 +21,12 @@ class Fruit {
         return $this;
     }
      
-    public function setPrice($price){
+    public function setPrice($price) {
         $this->price = $price;
         return $this;
     }
-
-    /**
-     * Set the value of price
-     *
-     * @return  self     
-     */
-    public function setPrice($price)
-    {
+   
+    public function setPrice($price) {
         $this->price = $price;
 
         return $this;
