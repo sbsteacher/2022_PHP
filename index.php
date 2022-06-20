@@ -1,4 +1,7 @@
-<?php    
-    require_once 'application/libs/config.php';
-    require_once 'application/libs/autoload.php';
-    new application\libs\application();
+<?php
+require_once 'application/libs/Config.php';
+require_once 'application/libs/Autoload.php';
+new application\libs\application();
+
+
+
